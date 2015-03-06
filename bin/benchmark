@@ -1,0 +1,52 @@
+#!/usr/bin/env ruby
+
+require "bundler/setup"
+
+# the champions
+require "uuid"
+require "uuidtools"
+require "uuid4r"
+
+# the challenger
+require "hakusho"
+
+# the referee
+require "benchmark/ips"
+
+# setup
+uuid = "6ba7b811-9dad-11d1-80b4-00c04fd430c8"
+str  = "benchmarking things"
+
+# v3 benchmark
+puts "UUID Version 3\n"
+Benchmark.ips do |x|
+  # Version 3
+  x.report("hakusho")   { Hakusho.create_md5(Hakusho.parse(uuid), str).to_s }
+  x.report("uuidtools") { UUIDTools::UUID.md5_create(UUIDTools::UUID.parse(uuid), str).to_s }
+  x.report("ruby-uuid") { UUID.create_md5(str, UUID.parse(uuid)).to_s }
+  x.report("uuid4r")    { UUID4R.uuid_v3("ns:URL", str) }
+  x.compare!
+end
+
+# v4 benchmark
+puts "UUID Version 4\n"
+Benchmark.ips do |x|
+  # Version 4
+  x.report("fast_uuid")    { Hakusho.create_random.to_s }
+  x.report("uuidtools")    { UUIDTools::UUID.random_create.to_s }
+  x.report("ruby-uuid")    { UUID.create_random.to_s }
+  x.report("uuid4r")       { UUID4R.uuid_v4 }
+  x.report("securerandom") { SecureRandom.uuid }
+  x.compare!
+end
+
+# v5 benchmark
+puts "UUID Version 5\n"
+Benchmark.ips do |x|
+  # Version 5
+  x.report("hakusho")   { Hakusho.create_sha1(Hakusho.parse(uuid), str).to_s }
+  x.report("uuidtools") { UUIDTools::UUID.sha1_create(UUIDTools::UUID.parse(uuid), str).to_s }
+  x.report("ruby-uuid") { UUID.create_sha1(str, UUID.parse(uuid)).to_s }
+  x.report("uuid4r")    { UUID4R.uuid_v5("ns:URL", str) }
+  x.compare!
+end
