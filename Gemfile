@@ -7,6 +7,7 @@ group :benchmark do
   gem "ruby-uuid"
   gem "uuidtools"
   gem "uuid4r"
+  gem "securerandom"
 
   # the ref
   gem "benchmark-ips"

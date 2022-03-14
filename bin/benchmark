@@ -6,6 +6,7 @@ require "bundler/setup"
 require "uuid"
 require "uuidtools"
 require "uuid4r"
+require "securerandom"
 
 # the challenger
 require "hakusho"
@@ -32,7 +33,7 @@ end
 puts "UUID Version 4\n"
 Benchmark.ips do |x|
   # Version 4
-  x.report("fast_uuid")    { Hakusho.create_random.to_s }
+  x.report("hakusho")      { Hakusho.create_random.to_s }
   x.report("uuidtools")    { UUIDTools::UUID.random_create.to_s }
   x.report("ruby-uuid")    { UUID.create_random.to_s }
   x.report("uuid4r")       { UUID4R.uuid_v4 }
