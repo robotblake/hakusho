@@ -55,67 +55,67 @@ These were created by running `bin/benchmark`.
 ### UUID Version 3
 
 ```
+Warming up --------------------------------------
+             hakusho    38.176k i/100ms
+           uuidtools     6.974k i/100ms
+           ruby-uuid     6.114k i/100ms
+              uuid4r     2.372k i/100ms
 Calculating -------------------------------------
-             hakusho     7.672k i/100ms
-           uuidtools     1.056k i/100ms
-           ruby-uuid     1.709k i/100ms
-              uuid4r     2.045k i/100ms
--------------------------------------------------
-             hakusho     86.471k (± 3.3%) i/s -    437.304k
-           uuidtools     10.852k (± 3.5%) i/s -     54.912k
-           ruby-uuid     17.866k (± 3.4%) i/s -     90.577k
-              uuid4r     21.429k (± 3.1%) i/s -    108.385k
+             hakusho    382.105k (± 0.3%) i/s -      1.947M in   5.095452s
+           uuidtools     69.501k (± 0.4%) i/s -    348.700k in   5.017225s
+           ruby-uuid     61.299k (± 0.4%) i/s -    311.814k in   5.086883s
+              uuid4r     23.730k (± 0.5%) i/s -    120.972k in   5.097876s
 
 Comparison:
-             hakusho:    86471.2 i/s
-              uuid4r:    21429.2 i/s - 4.04x slower
-           ruby-uuid:    17865.8 i/s - 4.84x slower
-           uuidtools:    10852.4 i/s - 7.97x slower
+             hakusho:   382105.0 i/s
+           uuidtools:    69501.5 i/s - 5.50x  (± 0.00) slower
+           ruby-uuid:    61298.9 i/s - 6.23x  (± 0.00) slower
+              uuid4r:    23730.4 i/s - 16.10x  (± 0.00) slower
 ```
 
 ### UUID Version 4
 
 ```
+Warming up --------------------------------------
+             hakusho   104.664k i/100ms
+           uuidtools    16.197k i/100ms
+           ruby-uuid    10.519k i/100ms
+              uuid4r     4.608k i/100ms
+        securerandom    92.162k i/100ms
 Calculating -------------------------------------
-           fast_uuid    12.581k i/100ms
-           uuidtools     2.584k i/100ms
-           ruby-uuid     2.829k i/100ms
-              uuid4r     3.396k i/100ms
-        securerandom    10.522k i/100ms
--------------------------------------------------
-           fast_uuid    156.784k (± 3.3%) i/s -    792.603k
-           uuidtools     27.215k (± 3.1%) i/s -    136.952k
-           ruby-uuid     29.793k (± 3.9%) i/s -    149.937k
-              uuid4r     36.125k (± 3.1%) i/s -    183.384k
-        securerandom    129.485k (± 3.2%) i/s -    652.364k
+             hakusho      1.052M (± 0.4%) i/s -      5.338M in   5.075885s
+           uuidtools    161.776k (± 0.4%) i/s -    809.850k in   5.006079s
+           ruby-uuid    105.226k (± 0.4%) i/s -    536.469k in   5.098320s
+              uuid4r     46.054k (± 0.5%) i/s -    230.400k in   5.002927s
+        securerandom    921.781k (± 0.4%) i/s -      4.700M in   5.099194s
 
 Comparison:
-           fast_uuid:   156783.6 i/s
-        securerandom:   129485.5 i/s - 1.21x slower
-              uuid4r:    36125.3 i/s - 4.34x slower
-           ruby-uuid:    29792.8 i/s - 5.26x slower
-           uuidtools:    27214.7 i/s - 5.76x slower
+             hakusho:  1051627.8 i/s
+        securerandom:   921780.8 i/s - 1.14x  (± 0.00) slower
+           uuidtools:   161775.6 i/s - 6.50x  (± 0.00) slower
+           ruby-uuid:   105226.3 i/s - 9.99x  (± 0.00) slower
+              uuid4r:    46054.1 i/s - 22.83x  (± 0.00) slower
 ```
 
 ### UUID Version 5
 
 ```
+Warming up --------------------------------------
+             hakusho    37.770k i/100ms
+           uuidtools     6.932k i/100ms
+           ruby-uuid     5.991k i/100ms
+              uuid4r     2.357k i/100ms
 Calculating -------------------------------------
-             hakusho     7.406k i/100ms
-           uuidtools     1.032k i/100ms
-           ruby-uuid     1.662k i/100ms
-              uuid4r     2.029k i/100ms
--------------------------------------------------
-             hakusho     82.308k (± 2.9%) i/s -    414.736k
-           uuidtools     10.669k (± 3.0%) i/s -     53.664k
-           ruby-uuid     17.515k (± 3.1%) i/s -     88.086k
-              uuid4r     21.395k (± 2.6%) i/s -    107.537k
+             hakusho    377.407k (± 0.3%) i/s -      1.888M in   5.003939s
+           uuidtools     69.226k (± 0.4%) i/s -    346.600k in   5.006841s
+           ruby-uuid     60.044k (± 0.3%) i/s -    305.541k in   5.088621s
+              uuid4r     23.582k (± 0.3%) i/s -    120.207k in   5.097412s
 
 Comparison:
-             hakusho:    82308.0 i/s
-              uuid4r:    21394.9 i/s - 3.85x slower
-           ruby-uuid:    17514.8 i/s - 4.70x slower
-           uuidtools:    10669.1 i/s - 7.71x slower
+             hakusho:   377407.2 i/s
+           uuidtools:    69226.2 i/s - 5.45x  (± 0.00) slower
+           ruby-uuid:    60044.5 i/s - 6.29x  (± 0.00) slower
+              uuid4r:    23582.2 i/s - 16.00x  (± 0.00) slower
 ```
 
 ## TODO
